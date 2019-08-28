@@ -16,7 +16,7 @@
 	<script src="lib/xregexp-all.js"></script>
 	<!--<script src="lib/usw.uri.js"></script>
 	<script src="lib/usw.relib.js"></script>
-	<script src="lib/usw.html.js"></script>-->
+	<script src="lib/usw.html.js"></script>-->	
 	<script src="lib/usw.rematch.20190828.min.js"></script>
 </head>
 <body>
@@ -39,7 +39,7 @@
 				<option value="http://lexvo.org/id/code/no">Norsk (Norwegian)</option>
 				<option value="http://lexvo.org/id/code/sv">Svenska (Swedish)</option>
 			</select> 
-			<button class='button' title="Add example test data" onclick="addTestData()">Add example test data for selected language</button>
+			<button class='button' title="Add example test data" onclick="addTestData()">Add test data for selected language</button>
 		</div>
 		<div class="one-third column">		
 			<input type="checkbox" id="allowNumericPatterns" checked onchange="refresh()">&nbsp;Consider lone numbers as year values?</input>				
@@ -48,13 +48,13 @@
 
 	<div class='row'>
 		<label for="textInput">Input:</label>
-		<textarea id="textInput" spellcheck="false" onkeyup="refresh()" onpaste="refresh()"></textarea>
+		<textarea id="textInput" spellcheck="false" onkeyup="refresh()" onpaste="refresh()"></textarea>		
 	</div><!--.row-->
 
 	<div class='row'>
 		<label for="dateSpanMatches">Results:</label>
 		<!--<div class="result" id="dateSpanMatches"></div>-->
-		<div class="result" id="hilitedMatches"></div>
+		<div class="result" id="hilitedMatches"></div>		
 	</div><!--.row-->	
 
 	 <section class="row footer">
@@ -85,7 +85,7 @@
 			The other control is a check-box indicating whether to consider lone numbers as year values - numbers lacking other qualifying context such as "circa" or "AD"/"BC" are perhaps less likely to indicate years - but we do not wish to preclude their identification altogether so it is left as a switchable option - the default setting is to include them.
 			</p>
 			<p>
-			The tool contains a small fragment of example text in each of the supported languages to give a clearer idea of what it does - select the required language and click the button to add example test data. You can interactively change the text in the upper box and see the highlighted results in the lower box. Please bear in mind that the tool has been developed by a native English speaker. The patterns for languages other than English have been derived sometimes using advice from native speakers of that language, but otherwise merely from observed usage of words in example text. These patterns are therefore less well developed (and maybe even incorrect!) We would welcome any input from native speakers of these languages in order to improve the multilingual pattern recognition. Proposals to assist in extending the tool to accommodate other languages would also be welcome.
+			The tool contains a small fragment of example text in each of the supported languages to give a clearer idea of what it does - select the required language and click the button to add example test data. You can interactively change the text in the upper box and see the highlighted results in the lower box. Please bear in mind that the tool has been developed by a native English speaker. The patterns for languages other than English have been derived sometimes using listings and advice from native speakers of that language, and from observed usage of words in example text. These patterns are less well developed (and maybe even incorrect!). The application is a work-in-progress, so we would welcome any input from native speakers of these languages in order to improve the multilingual pattern recognition. Proposals to assist in extending the tool to accommodate other languages would also be welcome.
 			</p>
 			<a href="#main" class="u-pull-right">[Back to top]</a> 
 		</div><!--.u-full-width column-->
