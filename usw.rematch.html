@@ -16,8 +16,8 @@
 	<script src="lib/xregexp-all.js"></script>
 	<!--<script src="lib/usw.uri.js"></script>
 	<script src="lib/usw.relib.js"></script>
-	<script src="lib/usw.html.js"></script>-->	
-	<script src="lib/usw.rematch.20190828.min.js"></script>
+	<script src="lib/usw.html.js"></script>-->
+	<script src="lib/usw.rematch.20191129.min.js"></script>
 </head>
 <body>
 <!-- .container is main centered wrapper -->
@@ -39,7 +39,8 @@
 				<option value="http://lexvo.org/id/code/no">Norsk (Norwegian)</option>
 				<option value="http://lexvo.org/id/code/sv">Svenska (Swedish)</option>
 			</select> 
-			<button class='button' title="Add example test data" onclick="addTestData()">Add test data for selected language</button>
+			<button class='button' title="Add example" onclick="addTestData()">Add example for selected language</button>
+			<button class='button' title="Clear input" onclick="clearInput()">Clear input</button>
 		</div>
 		<div class="one-third column">		
 			<input type="checkbox" id="allowNumericPatterns" checked onchange="refresh()">&nbsp;Consider lone numbers as year values?</input>				
@@ -52,10 +53,10 @@
 	</div><!--.row-->
 
 	<div class='row'>
-		<label for="dateSpanMatches">Results:</label>
+		<label for="hilitedMatches">Results:</label>
 		<!--<div class="result" id="dateSpanMatches"></div>-->
 		<div class="result" id="hilitedMatches"></div>		
-	</div><!--.row-->	
+	</div><!--.row-->		
 
 	 <section class="row footer">
 		<small>Created by <a id="footer-app-author" target="_blank" href="http://hypermedia.research.southwales.ac.uk/">University of South Wales - Hypermedia Research Group</a></small>
@@ -150,6 +151,11 @@ const addTestData = function() {
 	refresh();
 }
 
+const clearInput = function() {
+	document.getElementById("textInput").value = "";
+	refresh();
+}
+
 // highlight located matches in context within the text 
 const colourCode = (txt, matches) => {
 		
@@ -223,15 +229,12 @@ const refresh = function() {
 	// refresh displayed results
 	let sortByIndex = (a, b) => a.index - b.index;	
 	//document.getElementById("dateSpanMatches").innerHTML = resultsToUL(matches2.sort(sortByIndex));	
-	document.getElementById("hilitedMatches").innerHTML = colourCode(inputText, matches);	
+	document.getElementById("hilitedMatches").innerHTML = colourCode(inputText, matches);
+	
 };
 window.onload = function(e) { 
 	refresh();	
 };
-
-
-
-
 	
 </script>
 </body>
